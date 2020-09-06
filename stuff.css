@@ -1,0 +1,76 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 100px 20%;
+  font-family: calibri;
+}
+
+@keyframes changewidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+figure {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+figure canvas {
+  margin: 0;
+  padding: 0;
+}
+figure .canvasBezier {
+  position: absolute;
+  left: 50%;
+  transform: translate(50%, -50%);
+  top: 50%;
+}
+figure #labelFontSize {
+  padding: 0 0 0 30px;
+}
+figure #labelFontSize p {
+  margin: 0;
+}
+figure #labelFontSize .speedslider {
+  margin: 0 0 15px 0;
+}
+figure #labelFontSize .speedslider label {
+  display: block;
+}
+figure #labelFontSize #transitionDemo {
+  display: block;
+  position: relative;
+  padding: 10px 80px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  text-transform: uppercase;
+  overflow: hidden;
+  margin: 15px 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+figure #labelFontSize #transitionDemo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: #48bfe3;
+  transition: inherit;
+}
+figure #labelFontSize #transitionDemo:hover {
+  color: rgba(0, 0, 0, 0);
+}
+figure #labelFontSize #transitionDemo:hover::before {
+  width: 100%;
+}
