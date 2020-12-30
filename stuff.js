@@ -11,8 +11,12 @@ canvas.height = windowHeight;
 var canvasWidth = windowWidth;
 var canvasHeight = windowHeight;
 // setting offset of canvas from top & bottom of window, for mouse detection
-var canvasOffsetLeft = canvas.getBoundingClientRect().left;
-var canvasOffsetTop = canvas.getBoundingClientRect().top;
+var canvasOffsetLeft;
+var canvasOffsetTop;
+getCanvasOffsets();
+// -- rerun listeners on window scroll & resize
+window.addEventListener('scroll', getCanvasOffsets);
+window.addEventListener('resize', getCanvasOffsets);
 // set current display id variables
 var currentEasingP1 = document.querySelector('#currentEasingP1');
 var currentEasingP2 = document.querySelector('#currentEasingP2');
@@ -325,3 +329,12 @@ newGraph.plotGraph();
 
 // generate a new bezier curve
 newGraph.generateBezier(.25,.25,.75,.75);
+
+
+
+// function for getting canvas offsets
+function getCanvasOffsets() {
+    console.log("TESST");
+    canvasOffsetLeft = canvas.getBoundingClientRect().left;
+    canvasOffsetTop = canvas.getBoundingClientRect().top;
+};
